@@ -20,7 +20,7 @@ struct MessageField: View {
         HStack {
             // Custom text field created below
             CustomTextField(placeholder: Text("Message..."), text: $message)
-                .frame(height: 48)
+//                .frame(height: 48)
                 .disableAutocorrection(true)
                 .padding(.horizontal)
                 .background(Color.white)
@@ -43,7 +43,7 @@ struct MessageField: View {
         }
         //.padding(.horizontal)
         .padding(.vertical, 10)
-        .cornerRadius(50)
+//        .cornerRadius(50
         .padding()
         .background(purpleColor)
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
@@ -59,8 +59,8 @@ struct MessageField_Previews: PreviewProvider {
 struct CustomTextField: View {
     var placeholder: Text
     @Binding var text: String
-    var editingChanged: (Bool)->() = { _ in }
-    var commit: ()->() = { }
+//    var editingChanged: (Bool)->() = { _ in }
+//    var commit: ()->() = { }
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -69,7 +69,10 @@ struct CustomTextField: View {
                 placeholder
                 .opacity(0.5)
             }
-            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
+            TextField("", text: $text, axis: .vertical)
+                .lineLimit(4)
+                .padding(.horizontal, 3)
         }
+        .padding(.vertical, 15)
     }
 }

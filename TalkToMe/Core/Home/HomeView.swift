@@ -45,7 +45,7 @@ struct HomeView: View {
             NavigationView {
                 VStack(spacing: -50){
                     VStack(alignment: .leading){
-                        Spacer().frame(height: 30)
+                        Spacer().frame(height: 50)
                         HomeNavBarView()
                         Text("What would you like to practice today?")
                             .font(.title)
@@ -56,7 +56,9 @@ struct HomeView: View {
                         SearchBar(search: $search)
 
 
-                    }.padding(10).background(RoundedRectangle(cornerRadius: 20).fill(purpleColor).shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)).edgesIgnoringSafeArea(.top)
+                    }.padding(10).background(RoundedRectangle(cornerRadius: 20).fill(purpleColor).shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10))
+                        .edgesIgnoringSafeArea(.top)
+                    
                     VStack{
                         SectionTitleView(title: "Languages")
 
