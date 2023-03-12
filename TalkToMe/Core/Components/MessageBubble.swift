@@ -28,6 +28,6 @@ struct MessageBubble: View {
 
 struct MessageBubble_Previews: PreviewProvider {
     static var previews: some View {
-        MessageBubble(message: Message(id: UUID(), text: "I've been coding applications from scratch in SwiftUI and it's so much fun!", received: false))
+        MessageBubble(message: Message(id: UUID().uuidString, text: "I've been coding applications from scratch in SwiftUI and it's so much fun!", received: false, timestamp: Date.now))
     }
 }

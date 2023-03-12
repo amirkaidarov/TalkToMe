@@ -40,7 +40,7 @@ struct HomeView: View {
         ScrollView {
             ForEach(languages) { language  in
                 NavigationLink {
-                    ChatView(language: language)
+                    ChatView(messagesService: MessagesService(language: language))
                 } label: {
                     Group {
                         HStack (spacing : 16){

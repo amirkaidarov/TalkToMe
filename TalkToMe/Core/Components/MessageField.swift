@@ -20,7 +20,7 @@ struct MessageField: View {
                 .disableAutocorrection(true)
 
             Button {
-                messagesService.sendMessage(message, language.code)
+                messagesService.sendMessage(message, language)
                 message = ""
             } label: {
                 Image(systemName: "paperplane.fill")

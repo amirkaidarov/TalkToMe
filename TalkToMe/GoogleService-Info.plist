@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>540877745639-iohq0njvvl48f1gdnjbdcim1ilbf1gca.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.540877745639-iohq0njvvl48f1gdnjbdcim1ilbf1gca</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDPMt-BRr1ZKvuv3UKMqdrvojV5qPkKQak</string>
+	<key>GCM_SENDER_ID</key>
+	<string>540877745639</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.amirkaidarov.TalkToMe</string>
+	<key>PROJECT_ID</key>
+	<string>talktome-9e9d3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>talktome-9e9d3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:540877745639:ios:48b5b402ee6382d025a142</string>
+</dict>
+</plist>
