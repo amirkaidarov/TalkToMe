@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var search : String  = ""
     @EnvironmentObject var authVM: AuthViewModel
-    
-    
-    private let languages = [Language(title: "French", flag: "France", code: "fr-FR"),
-                             Language(title: "Russian", flag: "Russia", code: "ru-RU"),
-                             Language(title: "Spanish", flag: "Spain", code: "es-ES")]
+    @ObservedObject var homeVM = HomeViewModel()
     
     let purpleColor = Color(red: 115/255, green: 113/255, blue:252/255)
     let whiteSmoke = Color(red: 245/255, green: 245/255, blue:245/255)
@@ -53,7 +48,7 @@ struct HomeView: View {
                             .foregroundColor(Color.white)
 
 
-                        SearchBar(search: $search)
+                        SearchBar(search: $homeVM.searchText)
 
 
                     }.padding(10).background(RoundedRectangle(cornerRadius: 20).fill(purpleColor).shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10))
@@ -75,7 +70,7 @@ struct HomeView: View {
   
     private var languagesView : some View {
         ScrollView {
-            ForEach(languages) { language  in
+            ForEach(homeVM.searchableLanguages) { language  in
                 NavigationLink {
                     ChatView(messagesService: MessagesService(language: language))
                 } label: {

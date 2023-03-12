@@ -29,7 +29,7 @@ struct ChatView: View {
                         }
                     }
                     .onAppear {
-                        withAnimation {
+                        withAnimation (.spring()){
                             proxy.scrollTo(messagesService.lastMessageId, anchor: .bottom)
                         }
                     }

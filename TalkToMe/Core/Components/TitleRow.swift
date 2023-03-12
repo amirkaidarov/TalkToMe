@@ -49,6 +49,7 @@ struct TitleRow: View {
                 Spacer()
 
             }.padding(.horizontal)
+                .padding(.top)
             HStack(spacing:10){
                 Image(language.flag)
                     .resizable()
