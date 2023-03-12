@@ -11,13 +11,16 @@ struct MessageField: View {
     @EnvironmentObject var messagesService: MessagesService
     @State private var message = ""
     var language : Language
+    
+    let greyColor = Color(red: 231/255, green: 229/255, blue:229/255)
 
     var body: some View {
         HStack {
             // Custom text field created below
             CustomTextField(placeholder: Text("Message..."), text: $message)
                 .frame(height: 52)
-                .disableAutocorrection(true)
+                .disableAutocorrection(true).background(greyColor).padding(0)
+              
 
             Button {
                 messagesService.sendMessage(message, language.code)

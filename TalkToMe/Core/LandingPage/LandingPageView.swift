@@ -10,12 +10,14 @@ import SwiftUI
 struct LandingPageView: View {
     
     @EnvironmentObject var vm: AuthViewModel
+    let purpleColor = Color(red: 115/255, green: 113/255, blue:252/255)
     
     var body: some View {
         VStack (spacing: 20) {
             Spacer()
-            Text("Home")
+            Text("TALK2ME")
                 .font(.largeTitle)
+                .foregroundColor(purpleColor).bold()
             Image("home-screen-image")
                 .resizable()
                 .scaledToFit()
@@ -37,7 +39,7 @@ struct LandingPageView: View {
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
-
+            .tint(purpleColor)
         }
     }
     
