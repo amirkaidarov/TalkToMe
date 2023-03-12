@@ -27,6 +27,7 @@
 		037CF54E29BD5BBD00884735 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 037CF54D29BD5BBD00884735 /* FirebaseFirestore */; };
 		037CF55029BD5BBD00884735 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 037CF54F29BD5BBD00884735 /* FirebaseFirestoreSwift */; };
 		037CF55229BD5BD600884735 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037CF55129BD5BD600884735 /* GoogleService-Info.plist */; };
+		41E5992A29BE26DD00886FF3 /* PersonalityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5992929BE26DD00886FF3 /* PersonalityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		037CF54829BD3EFC00884735 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		037CF54A29BD40AA00884735 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		037CF55129BD5BD600884735 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41E5992929BE26DD00886FF3 /* PersonalityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				0313E16929BD168D00453AC8 /* HomeView.swift */,
 				0313E17129BD1FCD00453AC8 /* LanguageModel.swift */,
+				41E5992929BE26DD00886FF3 /* PersonalityModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				0313E18729BD3A7E00453AC8 /* Extensions.swift in Sources */,
 				037CF54929BD3EFC00884735 /* MessageModel.swift in Sources */,
 				0313E17729BD2A0500453AC8 /* ChatView.swift in Sources */,
+				41E5992A29BE26DD00886FF3 /* PersonalityModel.swift in Sources */,
 				0313E18129BD33DF00453AC8 /* MessageBubble.swift in Sources */,
 				0313E15E29BD114D00453AC8 /* LandingPageView.swift in Sources */,
 				0313E12C29BD0F8B00453AC8 /* TalkToMeApp.swift in Sources */,
