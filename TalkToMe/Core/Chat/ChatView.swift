@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct ChatView: View {
-    let language : String
+    let language : Language
     @StateObject var messagesService = MessagesService()
-    
-    init(language: String) {
-        self.language = language
-        messagesService.setLanguage(language)
-    }
     
     var body: some View {
         VStack {
             VStack {
-                TitleRow()
-                
+                TitleRow(language: language)
                 ScrollViewReader { proxy in
                     ScrollView {
                         ForEach(messagesService.messages, id: \.id) { message in
@@ -29,19 +23,17 @@ struct ChatView: View {
                     }
                     .padding(.top, 10)
                     .background(.white)
-                    .cornerRadius(30, corners: [.topLeft, .topRight]) // Custom cornerRadius modifier added in Extensions file
+                    .cornerRadius(30, corners: [.topLeft, .topRight])
 
                     .onChange(of: messagesService.lastMessageId) { id in
-                        // When the lastMessageId changes, scroll to the bottom of the conversation
                         withAnimation {
                             proxy.scrollTo(id, anchor: .bottom)
                         }
                     }
                 }
             }
-            .background(Color("Peach"))
             
-            MessageField()
+            MessageField(language: language)
                 .environmentObject(messagesService)
         }
     }
@@ -49,6 +41,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(language: "French")
+        ChatView(language: Language(title: "French", flag: "France", code: "fr-FR"))
     }
 }

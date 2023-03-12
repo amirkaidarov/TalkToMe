@@ -10,6 +10,7 @@ import SwiftUI
 struct MessageField: View {
     @EnvironmentObject var messagesService: MessagesService
     @State private var message = ""
+    var language : Language
 
     var body: some View {
         HStack {
@@ -19,13 +20,7 @@ struct MessageField: View {
                 .disableAutocorrection(true)
 
             Button {
-                Task{
-                    do {
-                        try await messagesService.sendMessage(message)
-                    } catch {
-                        print("damn")
-                    }
-                }
+                messagesService.sendMessage(message, language.code)
                 message = ""
             } label: {
                 Image(systemName: "paperplane.fill")
@@ -42,12 +37,12 @@ struct MessageField: View {
     }
 }
 
-struct MessageField_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageField()
-            .environmentObject(MessagesService())
-    }
-}
+//struct MessageField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MessageField()
+//            .environmentObject(MessagesService())
+//    }
+//}
 
 struct CustomTextField: View {
     var placeholder: Text

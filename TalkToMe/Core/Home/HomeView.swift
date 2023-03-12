@@ -11,9 +11,9 @@ struct HomeView: View {
     @State private var search : String  = ""
     @EnvironmentObject var authVM: AuthViewModel
     
-    private let languages = [Language(title: "French", flag: "France"),
-                             Language(title: "Russian", flag: "Russia"),
-                             Language(title: "Spanish", flag: "Spain")]
+    private let languages = [Language(title: "French", flag: "France", code: "fr-FR"),
+                             Language(title: "Russian", flag: "Russia", code: "ru-RU"),
+                             Language(title: "Spanish", flag: "Spain", code: "es-ES")]
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -40,7 +40,7 @@ struct HomeView: View {
         ScrollView {
             ForEach(languages) { language  in
                 NavigationLink {
-                    ChatView(language: language.title)
+                    ChatView(language: language)
                 } label: {
                     Group {
                         HStack (spacing : 16){

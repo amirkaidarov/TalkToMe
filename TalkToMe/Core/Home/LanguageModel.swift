@@ -11,4 +11,5 @@ struct Language : Identifiable {
     let id = UUID()
     let title : String
     let flag : String
+    let code : String
 }
