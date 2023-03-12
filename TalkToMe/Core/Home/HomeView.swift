@@ -11,6 +11,8 @@ struct HomeView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @ObservedObject var homeVM = HomeViewModel()
     
+    private let personalities = [Personality(name: "Adele", language: "French", flag: "France", code:"fr-FR")]
+    
     let purpleColor = Color(red: 115/255, green: 113/255, blue:252/255)
     let whiteSmoke = Color(red: 245/255, green: 245/255, blue:245/255)
 
@@ -59,6 +61,9 @@ struct HomeView: View {
 
                         languagesView.shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
 
+                        SectionTitleView(title: "Learn with Friends")
+                        
+                        personalitiesView.shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
 
                     }.padding()
 
@@ -80,6 +85,39 @@ struct HomeView: View {
                                 .font(.system(size: 20, weight: .semibold))
                             Spacer()
                             Image(language.flag)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 20)
+                                .padding(.horizontal)
+                                .shadow(radius: 5)
+                        }
+                        .padding()
+                        
+                    }
+                    .padding(.leading)
+                    .foregroundColor(Color(.label))
+                    .background(Color.white)
+                    .cornerRadius(18.0)
+                    
+                }
+            }
+            .padding(.bottom, 50)
+        }
+    }
+    
+    
+    private var personalitiesView : some View {
+        ScrollView {
+            ForEach(personalities) { personality  in
+                NavigationLink {
+                    //ChatView(messagesService: MessagesService(language: language))
+                } label: {
+                    Group {
+                        HStack (spacing : 16){
+                            Text(personality.name)
+                                .font(.system(size: 20, weight: .semibold))
+                            Spacer()
+                            Image(personality.flag)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 20)
