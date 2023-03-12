@@ -19,7 +19,10 @@ struct MessageField: View {
             // Custom text field created below
             CustomTextField(placeholder: Text("Message..."), text: $message)
                 .frame(height: 52)
-                .disableAutocorrection(true).background(greyColor).padding(0)
+                .disableAutocorrection(true)
+                .padding(.horizontal)
+                .background(greyColor)
+                .cornerRadius(20)
               
 
             Button {
@@ -34,18 +37,16 @@ struct MessageField: View {
         }
         .padding(.horizontal)
         .padding(.vertical, 10)
-        .background(Color("Gray"))
         .cornerRadius(50)
         .padding()
     }
 }
 
-//struct MessageField_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageField()
-//            .environmentObject(MessagesService())
-//    }
-//}
+struct MessageField_Previews: PreviewProvider {
+    static var previews: some View {
+        MessageField(language: Language(title: "French", flag: "", code: "")).environmentObject(MessagesService(language: Language(title: "French", flag: "", code: "")))
+    }
+}
 
 struct CustomTextField: View {
     var placeholder: Text
