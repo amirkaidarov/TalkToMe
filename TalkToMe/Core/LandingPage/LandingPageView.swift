@@ -15,9 +15,14 @@ struct LandingPageView: View {
     var body: some View {
         VStack (spacing: 20) {
             Spacer()
+            Text("Hello! Welcome to")
+                .foregroundColor(Color.black)
+                .font(.largeTitle)
+                
             Text("TALK2ME")
                 .font(.largeTitle)
                 .foregroundColor(purpleColor).bold()
+                
             Image("home-screen-image")
                 .resizable()
                 .scaledToFit()
@@ -32,9 +37,10 @@ struct LandingPageView: View {
             Button {
                 vm.toggle()
             } label: {
-                Text("Start")
+                Text("Let's Chat")
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(.bold)
+                    .padding(.horizontal, 40)
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
